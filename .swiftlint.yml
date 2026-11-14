@@ -1,6 +1,6 @@
 included:
-  - Seedypod
-  - SeedypodTests
+  - Thryve
+  - ThryveTests
 
 # Start lenient — tighten over time (same baseline as sleepypod/ios)
 disabled_rules:
