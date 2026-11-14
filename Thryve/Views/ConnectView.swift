@@ -13,11 +13,12 @@ struct ConnectView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Image(systemName: "leaf.fill")
-                        .font(.system(size: 30))
-                        .foregroundStyle(Theme.podOK)
+                    Image("BrandIcon")
+                        .resizable()
+                        .interpolation(.high)
+                        .scaledToFit()
                         .frame(width: 56, height: 56)
-                        .background(Theme.active, in: .rect(cornerRadius: 14))
+                        .accessibilityHidden(true)
                     Text("Thryve")
                         .font(.system(size: 34, weight: .semibold))
                     Text("Your Gardyn, run from your own network. Nothing goes through the cloud.")
