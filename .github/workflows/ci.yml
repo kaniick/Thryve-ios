@@ -22,8 +22,8 @@ jobs:
       - name: Build
         run: >
           xcodebuild build
-          -project Seedypod.xcodeproj
-          -scheme Seedypod
+          -project Thryve.xcodeproj
+          -scheme Thryve
           -destination 'generic/platform=iOS'
           CODE_SIGNING_ALLOWED=NO
           SWIFT_TREAT_WARNINGS_AS_ERRORS=YES
@@ -39,7 +39,7 @@ jobs:
                  for d in group if d["name"].startswith("iPhone")]
           if not ids: sys.exit("No iOS 26+ iPhone simulator installed")
           print(ids[0])')
-          xcodebuild test -project Seedypod.xcodeproj -scheme Seedypod \
+          xcodebuild test -project Thryve.xcodeproj -scheme Thryve \
             -destination "platform=iOS Simulator,id=$SIM" \
             CODE_SIGNING_ALLOWED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES -quiet
 
