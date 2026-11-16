@@ -18,10 +18,17 @@ final class HomeStore {
     private let api: any ThryveAPI
     private let stream: EventStream?
     private var refreshQueued = false
+    /// Posts banners for whatever the unit's notification feed has that's new.
+    private let notifier: UnitNotifier?
 
-    init(api: any ThryveAPI, stream: EventStream? = nil) {
+    /// Mirror the pump into the watering Live Activity (off in tests).
+    private let liveActivities: Bool
+
+    init(api: any ThryveAPI, stream: EventStream? = nil, notifier: UnitNotifier? = nil, liveActivities: Bool = false) {
         self.api = api
         self.stream = stream
+        self.notifier = notifier
+        self.liveActivities = liveActivities
     }
 
     /// Loads once, then follows the event stream and a slow poll until the task is cancelled.
@@ -42,6 +49,8 @@ final class HomeStore {
         do {
             snapshot = try await api.home()
             error = nil
+            if liveActivities { await WateringActivities.sync(pump: snapshot?.pump) }
+            _ = try? await notifier?.check(api: api)
         } catch let e as APIError {
             error = e
         } catch {

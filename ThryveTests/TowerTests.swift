@@ -38,6 +38,14 @@ import Testing
     }
 }
 
+/// RealityKit mesh generation traps (SIGFPE) on Intel simulators, which have no Apple GPU.
+/// CI runs on Intel macOS runners, so the scene tests run on Apple silicon only.
+#if arch(x86_64) && targetEnvironment(simulator)
+let realityKitScenesRun = false
+#else
+let realityKitScenesRun = true
+#endif
+
 @MainActor @Suite struct TowerSceneTests {
     @Test func cropsMatchByNameMostSpecificFirst() {
         #expect(PlantKit.crop(for: "Thai Basil").stem != PlantKit.crop(for: "Genovese Basil").stem)
@@ -48,7 +56,8 @@ import Testing
         #expect(PlantKit.crop(for: nil).habit == .rosette)
     }
 
-    @Test func picksResolveToTheirPodOrPart() throws {
+    @Test(.enabled(if: realityKitScenesRun, "RealityKit needs an Apple silicon simulator"))
+    func picksResolveToTheirPodOrPart() throws {
         let scene = TowerScene(podCount: 30, palette: .dark)
         let pods = scene.root.children.filter { $0.components[PodComponent.self] != nil }
         #expect(pods.count == 30)
@@ -64,7 +73,8 @@ import Testing
         #expect(scene.anchor(slot: 31) == nil)
     }
 
-    @Test func updateGrowsPlantsOnlyWherePlantedAndRebuildsOnChange() async throws {
+    @Test(.enabled(if: realityKitScenesRun, "RealityKit needs an Apple silicon simulator"))
+    func updateGrowsPlantsOnlyWherePlantedAndRebuildsOnChange() async throws {
         let home = try await DemoClient().home()
         let scene = TowerScene(podCount: 30, palette: .dark)
         var state = TowerState(pods: TowerPod.join(home), waterPct: 71, lightLevel: 85, pumpOn: true, selected: 2)

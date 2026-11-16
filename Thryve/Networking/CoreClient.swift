@@ -64,7 +64,8 @@ final class CoreClient: ThryveAPI {
     }
 
     func stopPump() async throws -> ActuatorState {
-        try await mutate("pump.stop", Empty())
+        // pump.stop takes no input (z.void()); `{"json":{}}` would be refused.
+        try await mutateWithoutInput("pump.stop")
     }
 
     func markHarvested(slot: Int) async throws -> Pod {
@@ -77,6 +78,41 @@ final class CoreClient: ThryveAPI {
 
     func acknowledgeAlert(id: Int) async throws {
         let _: CoreAlert? = try await mutate("alerts.acknowledge", AlertID(id: id))
+    }
+
+    // MARK: - Notifications
+
+    func notificationFeed(after afterId: Int?) async throws -> NotificationFeed {
+        do {
+            return try await query("notifications.feed", FeedInput(afterId: afterId, limit: 20))
+        } catch let error as APIError where error.isMissingProcedure {
+            // Core before notification rules: active alerts are the next best thing.
+            let alerts: [CoreAlert] = try await query("alerts.list", ActiveOnly(activeOnly: true))
+            return Self.feed(from: alerts, after: afterId)
+        }
+    }
+
+    func registerDevice(_ registration: DeviceRegistration) async throws -> DeviceStatus {
+        try await mutate("notifications.devices.register", registration)
+    }
+
+    func unregisterDevice(id: String) async throws {
+        let _: Ack = try await mutate("notifications.devices.unregister", DeviceID(deviceId: id))
+    }
+
+    func testNotification(deviceId: String) async throws -> TestResult {
+        try await mutate("notifications.devices.test", DeviceID(deviceId: deviceId))
+    }
+
+    func registerActivityToken(_ registration: ActivityTokenRegistration) async throws {
+        let _: Ack = try await mutate("notifications.activities.register", registration)
+    }
+
+    static func feed(from alerts: [CoreAlert], after afterId: Int?) -> NotificationFeed {
+        let latest = alerts.map(\.id).max()
+        guard let afterId else { return NotificationFeed(items: [], latestId: latest) }
+        let fresh = alerts.filter { $0.id > afterId && $0.acknowledgedAt == nil }.sorted { $0.id < $1.id }
+        return NotificationFeed(items: fresh.map(FeedItem.init(alert:)), latestId: latest)
     }
 
     // MARK: - Inputs
@@ -102,6 +138,9 @@ final class CoreClient: ThryveAPI {
         }
     }
     private struct AlertID: Encodable, Sendable { let id: Int }
+    private struct FeedInput: Encodable, Sendable { let afterId: Int?; let limit: Int }
+    private struct DeviceID: Encodable, Sendable { let deviceId: String }
+    private struct Ack: Decodable, Sendable { let ok: Bool? }
 
     // MARK: - tRPC Transport
 
@@ -140,6 +179,18 @@ final class CoreClient: ThryveAPI {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 15
         request.httpBody = try JSONEncoder().encode(SuperJSON(json: input))
+        let data = try await send(request, procedure: procedure)
+        return try decodeEnvelope(data)
+    }
+
+    /// POST /api/trpc/{procedure} with `{}`: superjson's encoding of no input, for `z.void()` procedures.
+    func mutateWithoutInput<T: Decodable>(_ procedure: String) async throws -> T {
+        guard let url = URL(string: "\(baseURL.absoluteString)/api/trpc/\(procedure)") else { throw APIError.invalidURL }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 15
+        request.httpBody = Data("{}".utf8)
         let data = try await send(request, procedure: procedure)
         return try decodeEnvelope(data)
     }
@@ -256,4 +307,5 @@ enum Log {
     static let network = Logger(subsystem: "com.thryve.app", category: "network")
     static let discovery = Logger(subsystem: "com.thryve.app", category: "discovery")
     static let stream = Logger(subsystem: "com.thryve.app", category: "stream")
+    static let notify = Logger(subsystem: "com.thryve.app", category: "notifications")
 }

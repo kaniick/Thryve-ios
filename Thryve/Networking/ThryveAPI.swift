@@ -15,6 +15,14 @@ protocol ThryveAPI: Sendable {
     func markHarvested(slot: Int) async throws -> Pod
     func updatePod(slot: Int, _ patch: PodPatch) async throws -> Pod
     func acknowledgeAlert(id: Int) async throws
+
+    // Notifications (core's "ios" channel)
+    /// What's new after `afterId` (nil: just the newest id, nothing to show).
+    func notificationFeed(after afterId: Int?) async throws -> NotificationFeed
+    func registerDevice(_ registration: DeviceRegistration) async throws -> DeviceStatus
+    func unregisterDevice(id: String) async throws
+    func testNotification(deviceId: String) async throws -> TestResult
+    func registerActivityToken(_ registration: ActivityTokenRegistration) async throws
 }
 
 enum APIError: LocalizedError, Sendable, Equatable {

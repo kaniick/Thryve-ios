@@ -14,10 +14,50 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: macos-26
+  # Quick checks that need no Mac: the plists and project.yml parse.
+  manifest:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Plists and project.yml parse
+        run: |
+          python3 - <<'PY'
+          import glob, plistlib, yaml
+          for p in glob.glob('**/*.plist', recursive=True) + glob.glob('**/*.entitlements', recursive=True):
+              with open(p, 'rb') as f:
+                  plistlib.load(f)
+              print('ok', p)
+          yaml.safe_load(open('project.yml'))
+          print('ok project.yml')
+          PY
+
+  # The committed Thryve.xcodeproj must be what project.yml generates.
+  project:
+    runs-on: macos-15-intel
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Upload the generated project
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodeproj
+          path: Thryve.xcodeproj
+      - name: Project is up to date
+        run: git diff --exit-code -- Thryve.xcodeproj || { echo "::error::Thryve.xcodeproj is stale. Run xcodegen generate and commit it."; exit 1; }
+
+  # Intel runners: GitHub's arm64 macOS pool has had capacity limits (jobs never picked up).
+  # macos-15-intel has Xcode 26.3 with the iOS 26.2 SDK and simulators.
+  build:
+    runs-on: macos-15-intel
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo xcode-select -s /Applications/Xcode_26.3.app && xcodebuild -version
+
+      # Build what project.yml describes, even if the committed project lags (the project job flags that).
+      - run: brew install xcodegen && xcodegen generate
 
       - name: Build
         run: >
@@ -39,12 +79,39 @@ jobs:
                  for d in group if d["name"].startswith("iPhone")]
           if not ids: sys.exit("No iOS 26+ iPhone simulator installed")
           print(ids[0])')
+          echo "Simulator $SIM"
+          # Boot first: a cold boot on Intel runners can outlast xcodebuild's launch timeout.
+          xcrun simctl boot "$SIM" || true
+          xcrun simctl bootstatus "$SIM" -b
           xcodebuild test -project Thryve.xcodeproj -scheme Thryve \
             -destination "platform=iOS Simulator,id=$SIM" \
+            -resultBundlePath TestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES -quiet
 
+      - name: Test summary
+        if: failure()
+        run: |
+          xcrun xcresulttool get test-results summary --path TestResults.xcresult --compact || true
+          xcrun xcresulttool get test-results tests --path TestResults.xcresult --compact | python3 -c '
+          import json, sys
+          def walk(n, path=""):
+              name = path + "/" + n.get("name", "")
+              if n.get("result") == "Failed" and not n.get("children"):
+                  print("FAILED", name)
+              for c in n.get("children", []):
+                  if c.get("nodeType") == "Failure Message": print("   ", c.get("name"))
+                  else: walk(c, name)
+          for t in json.load(sys.stdin).get("testNodes", []): walk(t)' || true
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestResults
+          path: TestResults.xcresult
+
   lint:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
       - run: brew install swiftlint

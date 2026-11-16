@@ -25,10 +25,15 @@ targets:
     platform: iOS
     sources:
       - path: Thryve
+    dependencies:
+      - target: ThryveWidgets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.thryve.app
         INFOPLIST_FILE: Thryve/Info.plist
+        # Push Notifications. Needs a paid Apple Developer team; with a free personal
+        # team, clear this setting to build (notifications then fall back to background checks).
+        CODE_SIGN_ENTITLEMENTS: Thryve/Thryve.entitlements
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
@@ -38,6 +43,26 @@ targets:
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""  # set your own Apple team ID
         PRODUCT_NAME: Thryve
+
+  # The watering Live Activity (lock screen and Dynamic Island).
+  ThryveWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ThryveWidgets
+      - path: Thryve/LiveActivity/WateringAttributes.swift
+      - path: Thryve/LiveActivity/StopPumpIntent.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.thryve.app.widgets
+        INFOPLIST_FILE: ThryveWidgets/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Thryve
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) THRYVE_WIDGET"
+        ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS: NO
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        PRODUCT_NAME: ThryveWidgets
+        SKIP_INSTALL: YES
 
   ThryveTests:
     type: bundle.unit-test

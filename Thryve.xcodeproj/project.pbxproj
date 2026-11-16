@@ -7,351 +7,505 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C0D62B38A47FB4CCD7DD37E /* TowerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A74A26905BF4C9A6BEDDE /* TowerLayout.swift */; };
-		22F8DBE205023868A8792627 /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC98BAA1ACF5307DC0DFA3 /* HomeStore.swift */; };
-		28D0BEC2D61BB8327DCC2ACC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73F06BC5537F1B089D03B /* Models.swift */; };
-		2E1D94079D312C6A6DD0819E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22736B43B99DB1430095CA /* Connection.swift */; };
-		3837205658B15B3EB410F187 /* UnitDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF92A9AFE89AD71EE7A834E /* UnitDiscovery.swift */; };
-		3D7F784E4D4CF202E06532BA /* ThryveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A92E9855FBB31454E2F49 /* ThryveAPI.swift */; };
-		438FEEDC23E039921D7A6F43 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71C6C36E51AE138D455415 /* Theme.swift */; };
-		44E981F19EB9648F25BCD569 /* TowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67383EDEF2A8721E4143F7 /* TowerTests.swift */; };
-		4C9D53598A1B42A40033D675 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FADC5B23C0B156DD1791B10 /* IBMPlexMono-Medium.ttf */; };
-		56AF1D94A5FB936B787B5528 /* Panels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85470ED5F4F3C4EA77483086 /* Panels.swift */; };
-		59FD9AB51238AEBCF21BA11B /* IBMPlexMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED79FB8BCF818FE175C94F9 /* IBMPlexMono-Light.ttf */; };
-		5B17C575D9A8A28F150E1C1F /* TowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BADB64AD18E5719CFD7E35 /* TowerView.swift */; };
-		6250C011980C4C40C17C0A5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6549A4D917DEAE32F3774540 /* SettingsView.swift */; };
-		63439CD0E388205A78C96B27 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662CDEC6325BF4C083FE3F7D /* HomeView.swift */; };
-		7C965F88BEA873B4D754BE9E /* AppLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08703882D194C690E4E83609 /* AppLogicTests.swift */; };
-		819346682C347A374650D735 /* PlantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D79460ACAA5C68879D7B01 /* PlantKit.swift */; };
-		95F1B9D174958C8AB06143D2 /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9402F3881AE0BFD81EE5540 /* ConnectView.swift */; };
-		99907476ADF04C093A8BCC30 /* IBMPlexMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81BB39394FB573BC0E7D983 /* IBMPlexMono-Regular.ttf */; };
-		A09689224FBA6AE9721CEDC9 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E7739E51DE9852B8D302B /* EventStream.swift */; };
-		AD397427ACD7BA8439FCA424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6D8475C2A61CD6FE39AD8F1 /* Assets.xcassets */; };
-		B51E91031B6F8DB834829C36 /* DemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF847986F8ADA5AF2C3011F5 /* DemoClient.swift */; };
-		BE961FA3E5926FFEAFF800FC /* PodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C71DC67FD54C6C02FE26D8 /* PodView.swift */; };
-		D26E1AE1226A2B22DF623170 /* CoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F562E2F69A2562F677161921 /* CoreClient.swift */; };
-		DB4F06D09600866BFD7A3583 /* TowerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEDFA949FBEA2E032F79791 /* TowerScene.swift */; };
-		E93A96DEA1D1BC34709A0042 /* CoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D807A37FCF29E77E55EEE /* CoreClientTests.swift */; };
-		EE6B9E17E9F67708918B4B5C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E496FD5262A7A4157C4D03B2 /* OFL.txt */; };
-		FD201F7801CE53357410CE15 /* ThryveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16F90BF2608213B7DE07B7 /* ThryveApp.swift */; };
+		00FE723EC708DBD2C8AC8601 /* ThryveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBC1D82CA35C3ADD8CE4EB /* ThryveAPI.swift */; };
+		08E6771503704DA292C8909E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB781739805CD8501CEE0C /* SettingsView.swift */; };
+		185F09FA9A1E484BB93D8C73 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672C5BE369C33F4F6CF406B3 /* NotificationSettings.swift */; };
+		1B1B4DB4DEB9282BDA3A1F71 /* IBMPlexMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8D69222877E01198E531D /* IBMPlexMono-Light.ttf */; };
+		1B89C9B73160C3E1417C81D8 /* PodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C90C3A5459A8AEAE354EC /* PodView.swift */; };
+		1F31451895771FDB82CC0984 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD435797FEAF30DE844D13E9 /* Models.swift */; };
+		2CC3A481219BDF2F96D5D13C /* TowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAF4CC77FA8747B34505C6 /* TowerView.swift */; };
+		2D0E4FBEC8893498F2DCF6DD /* ThryveWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D3DE3B452968780C8724C30A /* ThryveWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2D17BD2405B69B44C2409B5A /* NotificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA07121E93A0F481A895D3B /* NotificationModels.swift */; };
+		328B4516278D40AE050AC758 /* UnitDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F032FE1B63766AF5CB0405 /* UnitDiscovery.swift */; };
+		329386994C512DBF731C9EDD /* StopPumpIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25459BD788CE083D831E03CC /* StopPumpIntent.swift */; };
+		3AC77F2750F5F284477513A6 /* AppLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7CDBC50B1BD28D77B4EF7 /* AppLogicTests.swift */; };
+		49F4A80277401E5F1379E65E /* CoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0F3042FB8C826EC5BE038 /* CoreClient.swift */; };
+		5E59B2ACEA3397D8564942C2 /* CoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696334AEB1C235FB3D853F2 /* CoreClientTests.swift */; };
+		5E795AD9E9FBFDC6201362B0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A17AD628DD856D9624BF0D8D /* IBMPlexMono-Medium.ttf */; };
+		654A23C7BFA9122F9998698F /* IBMPlexMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D363EC444D4B36DD8C87A89 /* IBMPlexMono-Regular.ttf */; };
+		691959F1B930E2A365A572D9 /* WateringLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CE882FE9C465222F95E66D /* WateringLiveActivity.swift */; };
+		79342A83A262C435CB442127 /* TowerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24894FF2158C9805614F1217 /* TowerScene.swift */; };
+		7A0A57B89B4773F2ED7EBBB9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CC43092FE1FC76E4AD77F /* Connection.swift */; };
+		7A5DC09026070E85A58B449E /* WateringActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F403B18BF7357E073737DC /* WateringActivities.swift */; };
+		7BA50ABDFD1ED36C8F3AB1AF /* PlantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3983679DC8592B15AF1D73E /* PlantKit.swift */; };
+		80B69FFA4D6913ED80FBB601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C03D25D8CEE7908483C772B /* Assets.xcassets */; };
+		840878011F714A601140CF57 /* WateringAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C7BE694E6A4E00814A095 /* WateringAttributes.swift */; };
+		84CC2B7603E56B3EE1F355A9 /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385781F8B5A8A4C6D71051E /* HomeStore.swift */; };
+		9A712E06E01D77747D932BCC /* StopPumpIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25459BD788CE083D831E03CC /* StopPumpIntent.swift */; };
+		9FC805B15B6DDAC79BF40547 /* LiveActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720CA3BE20ED5CABB66130E7 /* LiveActivityTests.swift */; };
+		A15507AD71A3A4D51DC6898E /* NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F31F26D94B75386FB52999 /* NotificationTests.swift */; };
+		A3978FCC86A81FC26DF99FD3 /* TowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0EB668B188387137481B /* TowerTests.swift */; };
+		A89FCD885CA30000E0C24B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750AA3C0102A0792AD03C0BB /* AppDelegate.swift */; };
+		BEFD78F1C5E24E2A99B34B0D /* ThryveWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66101A1BBD6A9B8E3F961D /* ThryveWidgets.swift */; };
+		BFF88167D09A9A410AC1EA77 /* Panels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD293B512BF60093F30C8F0D /* Panels.swift */; };
+		C2CBA5E9918AFCC26F1BEE64 /* UnitNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9146CFAA2160D56C75DFF /* UnitNotifier.swift */; };
+		C349A8B33C02F86AE7B11B76 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65DA2C4F9A7860A9D11FD5 /* EventStream.swift */; };
+		C62DA4AD92592C5D0E60D070 /* ThryveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF92FA5A99BF92790F3FBFE /* ThryveApp.swift */; };
+		C885BCE791A34DDD83BC040A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01F919A873922D207A8D60 /* HomeView.swift */; };
+		CAB9EB8BE925D51449F96848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CC031BA4299A051648CE7A /* Assets.xcassets */; };
+		CE6E60242E893511731DCCF0 /* DemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC881AA6D17E85D191586B81 /* DemoClient.swift */; };
+		D0E409E63CA2DB01C9F9DCBF /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686A2E02E2CB0EE9CBA3C84 /* ConnectView.swift */; };
+		E0AA1BB5D067E38229B43A5F /* TowerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A592DE8CAA37517B93DA68D /* TowerLayout.swift */; };
+		E8021035DAFBC8F78963E497 /* PushRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB1D6404184C61579C94A5 /* PushRegistrar.swift */; };
+		EA5FF048D50AB79D18B5FD6A /* WateringAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C7BE694E6A4E00814A095 /* WateringAttributes.swift */; };
+		FC92F067012B99C76BBE19A3 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 40AE9567F80A2A8240A3D5FA /* OFL.txt */; };
+		FCB2E6B628A5FE75CBBB2A0A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D7DBF5EF0857A94BC2239 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB3992988D2A45B8DBEB2199 /* PBXContainerItemProxy */ = {
+		376D1BA291AFAB95E6CB2D16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3C69B90B4ACC0286396CF4C3 /* Project object */;
+			containerPortal = 6607E0633407D0AB24C48186 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6797D232164FB85E58E4ACA8;
+			remoteGlobalIDString = 21352D84B2FBE7F83617824C;
 			remoteInfo = Thryve;
+		};
+		E4EA8A0CA2227DD011A8EBA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6607E0633407D0AB24C48186 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB67FA329C3F23947D924CE;
+			remoteInfo = ThryveWidgets;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		40254E355BD566F74E549DA1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2D0E4FBEC8893498F2DCF6DD /* ThryveWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		08703882D194C690E4E83609 /* AppLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogicTests.swift; sourceTree = "<group>"; };
-		0FADC5B23C0B156DD1791B10 /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
-		160AC78CDC6A9203DBA1ADAB /* Thryve.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Thryve.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		178A92E9855FBB31454E2F49 /* ThryveAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThryveAPI.swift; sourceTree = "<group>"; };
-		1B71C6C36E51AE138D455415 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		26D79460ACAA5C68879D7B01 /* PlantKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantKit.swift; sourceTree = "<group>"; };
-		2A16F90BF2608213B7DE07B7 /* ThryveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThryveApp.swift; sourceTree = "<group>"; };
-		2E6D807A37FCF29E77E55EEE /* CoreClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClientTests.swift; sourceTree = "<group>"; };
-		3DF92A9AFE89AD71EE7A834E /* UnitDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDiscovery.swift; sourceTree = "<group>"; };
-		5DEC0542C88AEA226C4CBFA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5DEDFA949FBEA2E032F79791 /* TowerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerScene.swift; sourceTree = "<group>"; };
-		6549A4D917DEAE32F3774540 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		662CDEC6325BF4C083FE3F7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		70C71DC67FD54C6C02FE26D8 /* PodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodView.swift; sourceTree = "<group>"; };
-		7ED79FB8BCF818FE175C94F9 /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
-		85470ED5F4F3C4EA77483086 /* Panels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panels.swift; sourceTree = "<group>"; };
-		89E73F06BC5537F1B089D03B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		8F22736B43B99DB1430095CA /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		927E7739E51DE9852B8D302B /* EventStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
-		938CCE68AC2B282B2EFC857F /* ThryveTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ThryveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A67383EDEF2A8721E4143F7 /* TowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTests.swift; sourceTree = "<group>"; };
-		9E0A74A26905BF4C9A6BEDDE /* TowerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerLayout.swift; sourceTree = "<group>"; };
-		A5BADB64AD18E5719CFD7E35 /* TowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerView.swift; sourceTree = "<group>"; };
-		B81BB39394FB573BC0E7D983 /* IBMPlexMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Regular.ttf"; sourceTree = "<group>"; };
-		BAEC98BAA1ACF5307DC0DFA3 /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
-		C9402F3881AE0BFD81EE5540 /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
-		CF847986F8ADA5AF2C3011F5 /* DemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoClient.swift; sourceTree = "<group>"; };
-		D6D8475C2A61CD6FE39AD8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E496FD5262A7A4157C4D03B2 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		F562E2F69A2562F677161921 /* CoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClient.swift; sourceTree = "<group>"; };
+		0D363EC444D4B36DD8C87A89 /* IBMPlexMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Regular.ttf"; sourceTree = "<group>"; };
+		0FA07121E93A0F481A895D3B /* NotificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModels.swift; sourceTree = "<group>"; };
+		184CC43092FE1FC76E4AD77F /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		1FF9146CFAA2160D56C75DFF /* UnitNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNotifier.swift; sourceTree = "<group>"; };
+		247C7BE694E6A4E00814A095 /* WateringAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringAttributes.swift; sourceTree = "<group>"; };
+		24894FF2158C9805614F1217 /* TowerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerScene.swift; sourceTree = "<group>"; };
+		25459BD788CE083D831E03CC /* StopPumpIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPumpIntent.swift; sourceTree = "<group>"; };
+		2686A2E02E2CB0EE9CBA3C84 /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		33F403B18BF7357E073737DC /* WateringActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringActivities.swift; sourceTree = "<group>"; };
+		368BB3CB36AA30E40313B5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3AF92FA5A99BF92790F3FBFE /* ThryveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThryveApp.swift; sourceTree = "<group>"; };
+		3DBD7AACE23D70ED59EC432A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		40AE9567F80A2A8240A3D5FA /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		45CC031BA4299A051648CE7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45F31F26D94B75386FB52999 /* NotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTests.swift; sourceTree = "<group>"; };
+		47CB781739805CD8501CEE0C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		488C90C3A5459A8AEAE354EC /* PodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodView.swift; sourceTree = "<group>"; };
+		4A65DA2C4F9A7860A9D11FD5 /* EventStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
+		4C03D25D8CEE7908483C772B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E3D7DBF5EF0857A94BC2239 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5385781F8B5A8A4C6D71051E /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
+		5460D771DE2287FDA65F9DBC /* Thryve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Thryve.entitlements; sourceTree = "<group>"; };
+		5F01F919A873922D207A8D60 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6696334AEB1C235FB3D853F2 /* CoreClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClientTests.swift; sourceTree = "<group>"; };
+		672C5BE369C33F4F6CF406B3 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
+		6A592DE8CAA37517B93DA68D /* TowerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerLayout.swift; sourceTree = "<group>"; };
+		720CA3BE20ED5CABB66130E7 /* LiveActivityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityTests.swift; sourceTree = "<group>"; };
+		750AA3C0102A0792AD03C0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7BD8D69222877E01198E531D /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
+		7DE7CDBC50B1BD28D77B4EF7 /* AppLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogicTests.swift; sourceTree = "<group>"; };
+		80CE882FE9C465222F95E66D /* WateringLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringLiveActivity.swift; sourceTree = "<group>"; };
+		A17AD628DD856D9624BF0D8D /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
+		B0C0F3042FB8C826EC5BE038 /* CoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClient.swift; sourceTree = "<group>"; };
+		BD66101A1BBD6A9B8E3F961D /* ThryveWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThryveWidgets.swift; sourceTree = "<group>"; };
+		C26D667B185CA8025DA78DD6 /* Thryve.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Thryve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F032FE1B63766AF5CB0405 /* UnitDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDiscovery.swift; sourceTree = "<group>"; };
+		CC6D0EB668B188387137481B /* TowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTests.swift; sourceTree = "<group>"; };
+		D2FB1D6404184C61579C94A5 /* PushRegistrar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistrar.swift; sourceTree = "<group>"; };
+		D3DE3B452968780C8724C30A /* ThryveWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ThryveWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43004FACFC8121E45974740 /* ThryveTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ThryveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC881AA6D17E85D191586B81 /* DemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoClient.swift; sourceTree = "<group>"; };
+		DD293B512BF60093F30C8F0D /* Panels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panels.swift; sourceTree = "<group>"; };
+		DD435797FEAF30DE844D13E9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E2CAF4CC77FA8747B34505C6 /* TowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerView.swift; sourceTree = "<group>"; };
+		F2CBC1D82CA35C3ADD8CE4EB /* ThryveAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThryveAPI.swift; sourceTree = "<group>"; };
+		F3983679DC8592B15AF1D73E /* PlantKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		2ABAB3B2DE2E58348433DD66 /* Services */ = {
+		0003C360299D4CAE8C313327 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				8F22736B43B99DB1430095CA /* Connection.swift */,
-				927E7739E51DE9852B8D302B /* EventStream.swift */,
-				BAEC98BAA1ACF5307DC0DFA3 /* HomeStore.swift */,
-				3DF92A9AFE89AD71EE7A834E /* UnitDiscovery.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		2C0341E6AB66FB0ABE652694 /* Thryve */ = {
-			isa = PBXGroup;
-			children = (
-				D6D8475C2A61CD6FE39AD8F1 /* Assets.xcassets */,
-				5DEC0542C88AEA226C4CBFA0 /* Info.plist */,
-				6A107DBCBC7876259E11DE5D /* App */,
-				B8E4E3BA9C0965AE33C0D45A /* Models */,
-				5F6E8CA683B0BD79AE76007B /* Networking */,
-				3BA90AD2DBC86110AD3736DF /* Resources */,
-				2ABAB3B2DE2E58348433DD66 /* Services */,
-				3C077FD874126920BCF71504 /* Theme */,
-				BDD0A4517D6024F9367162AA /* Tower */,
-				43ED73536D50FB3F2A4B9277 /* Views */,
-			);
-			path = Thryve;
-			sourceTree = "<group>";
-		};
-		3BA90AD2DBC86110AD3736DF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F3394B70B351CA9F92B596AC /* Fonts */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		3C077FD874126920BCF71504 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				1B71C6C36E51AE138D455415 /* Theme.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		43ED73536D50FB3F2A4B9277 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C9402F3881AE0BFD81EE5540 /* ConnectView.swift */,
-				662CDEC6325BF4C083FE3F7D /* HomeView.swift */,
-				85470ED5F4F3C4EA77483086 /* Panels.swift */,
-				6549A4D917DEAE32F3774540 /* SettingsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		56494B067D0A92F39DF5B9A2 /* ThryveTests */ = {
-			isa = PBXGroup;
-			children = (
-				08703882D194C690E4E83609 /* AppLogicTests.swift */,
-				2E6D807A37FCF29E77E55EEE /* CoreClientTests.swift */,
-				9A67383EDEF2A8721E4143F7 /* TowerTests.swift */,
-			);
-			path = ThryveTests;
-			sourceTree = "<group>";
-		};
-		5F6E8CA683B0BD79AE76007B /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				F562E2F69A2562F677161921 /* CoreClient.swift */,
-				CF847986F8ADA5AF2C3011F5 /* DemoClient.swift */,
-				178A92E9855FBB31454E2F49 /* ThryveAPI.swift */,
+				B0C0F3042FB8C826EC5BE038 /* CoreClient.swift */,
+				DC881AA6D17E85D191586B81 /* DemoClient.swift */,
+				F2CBC1D82CA35C3ADD8CE4EB /* ThryveAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		6A107DBCBC7876259E11DE5D /* App */ = {
+		156C78A96CE2A68374A5DFE5 /* Tower */ = {
 			isa = PBXGroup;
 			children = (
-				2A16F90BF2608213B7DE07B7 /* ThryveApp.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		B8E24DCB0DE35E410D288DAC = {
-			isa = PBXGroup;
-			children = (
-				2C0341E6AB66FB0ABE652694 /* Thryve */,
-				56494B067D0A92F39DF5B9A2 /* ThryveTests */,
-				D6B930BDC68C09537BF7D105 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		B8E4E3BA9C0965AE33C0D45A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				89E73F06BC5537F1B089D03B /* Models.swift */,
-				70C71DC67FD54C6C02FE26D8 /* PodView.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BDD0A4517D6024F9367162AA /* Tower */ = {
-			isa = PBXGroup;
-			children = (
-				26D79460ACAA5C68879D7B01 /* PlantKit.swift */,
-				9E0A74A26905BF4C9A6BEDDE /* TowerLayout.swift */,
-				5DEDFA949FBEA2E032F79791 /* TowerScene.swift */,
-				A5BADB64AD18E5719CFD7E35 /* TowerView.swift */,
+				F3983679DC8592B15AF1D73E /* PlantKit.swift */,
+				6A592DE8CAA37517B93DA68D /* TowerLayout.swift */,
+				24894FF2158C9805614F1217 /* TowerScene.swift */,
+				E2CAF4CC77FA8747B34505C6 /* TowerView.swift */,
 			);
 			path = Tower;
 			sourceTree = "<group>";
 		};
-		D6B930BDC68C09537BF7D105 /* Products */ = {
+		28349A28EF8207A5B4D9EF16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				160AC78CDC6A9203DBA1ADAB /* Thryve.app */,
-				938CCE68AC2B282B2EFC857F /* ThryveTests.xctest */,
+				6FECD82E8FD85401A9EE7752 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C43FE9B3214CF6F3FC19F4B /* Thryve */ = {
+			isa = PBXGroup;
+			children = (
+				4C03D25D8CEE7908483C772B /* Assets.xcassets */,
+				368BB3CB36AA30E40313B5B1 /* Info.plist */,
+				5460D771DE2287FDA65F9DBC /* Thryve.entitlements */,
+				988812FFD82112CBD3ABB1AC /* App */,
+				D658331BC5D5ED2E1F24242A /* LiveActivity */,
+				87409AB1083D0E8B94D1C244 /* Models */,
+				0003C360299D4CAE8C313327 /* Networking */,
+				F4B4474C5CC126490ECC06E3 /* Notifications */,
+				28349A28EF8207A5B4D9EF16 /* Resources */,
+				4BA6CA7FA64BCE50B3F02469 /* Services */,
+				6815F09C20B98AADA012019E /* Theme */,
+				156C78A96CE2A68374A5DFE5 /* Tower */,
+				7E0332D4919072FC445918E2 /* Views */,
+			);
+			path = Thryve;
+			sourceTree = "<group>";
+		};
+		46614F2F5C82604534928257 /* ThryveWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				45CC031BA4299A051648CE7A /* Assets.xcassets */,
+				3DBD7AACE23D70ED59EC432A /* Info.plist */,
+				BD66101A1BBD6A9B8E3F961D /* ThryveWidgets.swift */,
+				80CE882FE9C465222F95E66D /* WateringLiveActivity.swift */,
+			);
+			path = ThryveWidgets;
+			sourceTree = "<group>";
+		};
+		4BA6CA7FA64BCE50B3F02469 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				184CC43092FE1FC76E4AD77F /* Connection.swift */,
+				4A65DA2C4F9A7860A9D11FD5 /* EventStream.swift */,
+				5385781F8B5A8A4C6D71051E /* HomeStore.swift */,
+				C9F032FE1B63766AF5CB0405 /* UnitDiscovery.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		61F9C4BAD4D78B9D465DA3E1 /* ThryveTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DE7CDBC50B1BD28D77B4EF7 /* AppLogicTests.swift */,
+				6696334AEB1C235FB3D853F2 /* CoreClientTests.swift */,
+				720CA3BE20ED5CABB66130E7 /* LiveActivityTests.swift */,
+				45F31F26D94B75386FB52999 /* NotificationTests.swift */,
+				CC6D0EB668B188387137481B /* TowerTests.swift */,
+			);
+			path = ThryveTests;
+			sourceTree = "<group>";
+		};
+		6815F09C20B98AADA012019E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4E3D7DBF5EF0857A94BC2239 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		6FECD82E8FD85401A9EE7752 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7BD8D69222877E01198E531D /* IBMPlexMono-Light.ttf */,
+				A17AD628DD856D9624BF0D8D /* IBMPlexMono-Medium.ttf */,
+				0D363EC444D4B36DD8C87A89 /* IBMPlexMono-Regular.ttf */,
+				40AE9567F80A2A8240A3D5FA /* OFL.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7E0332D4919072FC445918E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2686A2E02E2CB0EE9CBA3C84 /* ConnectView.swift */,
+				5F01F919A873922D207A8D60 /* HomeView.swift */,
+				672C5BE369C33F4F6CF406B3 /* NotificationSettings.swift */,
+				DD293B512BF60093F30C8F0D /* Panels.swift */,
+				47CB781739805CD8501CEE0C /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		87409AB1083D0E8B94D1C244 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD435797FEAF30DE844D13E9 /* Models.swift */,
+				488C90C3A5459A8AEAE354EC /* PodView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		988812FFD82112CBD3ABB1AC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				750AA3C0102A0792AD03C0BB /* AppDelegate.swift */,
+				3AF92FA5A99BF92790F3FBFE /* ThryveApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9C9B4264F2398BBC4236E3AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C26D667B185CA8025DA78DD6 /* Thryve.app */,
+				D43004FACFC8121E45974740 /* ThryveTests.xctest */,
+				D3DE3B452968780C8724C30A /* ThryveWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F3394B70B351CA9F92B596AC /* Fonts */ = {
+		A64E77093CAE878AD4A957DF = {
 			isa = PBXGroup;
 			children = (
-				7ED79FB8BCF818FE175C94F9 /* IBMPlexMono-Light.ttf */,
-				0FADC5B23C0B156DD1791B10 /* IBMPlexMono-Medium.ttf */,
-				B81BB39394FB573BC0E7D983 /* IBMPlexMono-Regular.ttf */,
-				E496FD5262A7A4157C4D03B2 /* OFL.txt */,
+				2C43FE9B3214CF6F3FC19F4B /* Thryve */,
+				61F9C4BAD4D78B9D465DA3E1 /* ThryveTests */,
+				46614F2F5C82604534928257 /* ThryveWidgets */,
+				9C9B4264F2398BBC4236E3AB /* Products */,
 			);
-			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D658331BC5D5ED2E1F24242A /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				25459BD788CE083D831E03CC /* StopPumpIntent.swift */,
+				33F403B18BF7357E073737DC /* WateringActivities.swift */,
+				247C7BE694E6A4E00814A095 /* WateringAttributes.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		F4B4474C5CC126490ECC06E3 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				0FA07121E93A0F481A895D3B /* NotificationModels.swift */,
+				D2FB1D6404184C61579C94A5 /* PushRegistrar.swift */,
+				1FF9146CFAA2160D56C75DFF /* UnitNotifier.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		416E56578E599CA4861A3B87 /* ThryveTests */ = {
+		21352D84B2FBE7F83617824C /* Thryve */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6088C93190EC56D1102B4E1 /* Build configuration list for PBXNativeTarget "ThryveTests" */;
+			buildConfigurationList = D2A46979D33C9D37A150C324 /* Build configuration list for PBXNativeTarget "Thryve" */;
 			buildPhases = (
-				7444ADE70F925AFBF2F42FD9 /* Sources */,
+				7A94F3631CCCDCF09AC28C8D /* Sources */,
+				C59FAC5D3777A9BB35553958 /* Resources */,
+				40254E355BD566F74E549DA1 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6F4439DC4BA045328DDF79AD /* PBXTargetDependency */,
-			);
-			name = ThryveTests;
-			packageProductDependencies = (
-			);
-			productName = ThryveTests;
-			productReference = 938CCE68AC2B282B2EFC857F /* ThryveTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6797D232164FB85E58E4ACA8 /* Thryve */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CC5AC1535654A84CEBD5BCE1 /* Build configuration list for PBXNativeTarget "Thryve" */;
-			buildPhases = (
-				1C2B1FF44B0A32073B943422 /* Sources */,
-				E9D6F0309EA8173D94DA2289 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				FE7526E19DD306CD6B964260 /* PBXTargetDependency */,
 			);
 			name = Thryve;
 			packageProductDependencies = (
 			);
 			productName = Thryve;
-			productReference = 160AC78CDC6A9203DBA1ADAB /* Thryve.app */;
+			productReference = C26D667B185CA8025DA78DD6 /* Thryve.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BFB67FA329C3F23947D924CE /* ThryveWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D826CFCDF0D6949137255956 /* Build configuration list for PBXNativeTarget "ThryveWidgets" */;
+			buildPhases = (
+				E4835EFC2059798E4C9DB396 /* Sources */,
+				35727BDCEF88A56134261415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThryveWidgets;
+			packageProductDependencies = (
+			);
+			productName = ThryveWidgets;
+			productReference = D3DE3B452968780C8724C30A /* ThryveWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C8349EE2DFE6FB2C78AD3972 /* ThryveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B24CDCAFC72CA733154E8D1 /* Build configuration list for PBXNativeTarget "ThryveTests" */;
+			buildPhases = (
+				812B1D1F905F1E0665D0A66E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF51BCECA890BF60F43592D4 /* PBXTargetDependency */,
+			);
+			name = ThryveTests;
+			packageProductDependencies = (
+			);
+			productName = ThryveTests;
+			productReference = D43004FACFC8121E45974740 /* ThryveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3C69B90B4ACC0286396CF4C3 /* Project object */ = {
+		6607E0633407D0AB24C48186 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					6797D232164FB85E58E4ACA8 = {
+					21352D84B2FBE7F83617824C = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					BFB67FA329C3F23947D924CE = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = DEC6D7B8F042EDBBC1836542 /* Build configuration list for PBXProject "Thryve" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 44BDFA5B4F4C7C0B145F3A75 /* Build configuration list for PBXProject "Thryve" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				en,
 			);
-			mainGroup = B8E24DCB0DE35E410D288DAC;
+			mainGroup = A64E77093CAE878AD4A957DF;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 9C9B4264F2398BBC4236E3AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6797D232164FB85E58E4ACA8 /* Thryve */,
-				416E56578E599CA4861A3B87 /* ThryveTests */,
+				21352D84B2FBE7F83617824C /* Thryve */,
+				BFB67FA329C3F23947D924CE /* ThryveWidgets */,
+				C8349EE2DFE6FB2C78AD3972 /* ThryveTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E9D6F0309EA8173D94DA2289 /* Resources */ = {
+		35727BDCEF88A56134261415 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD397427ACD7BA8439FCA424 /* Assets.xcassets in Resources */,
-				59FD9AB51238AEBCF21BA11B /* IBMPlexMono-Light.ttf in Resources */,
-				4C9D53598A1B42A40033D675 /* IBMPlexMono-Medium.ttf in Resources */,
-				99907476ADF04C093A8BCC30 /* IBMPlexMono-Regular.ttf in Resources */,
-				EE6B9E17E9F67708918B4B5C /* OFL.txt in Resources */,
+				CAB9EB8BE925D51449F96848 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59FAC5D3777A9BB35553958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B69FFA4D6913ED80FBB601 /* Assets.xcassets in Resources */,
+				1B1B4DB4DEB9282BDA3A1F71 /* IBMPlexMono-Light.ttf in Resources */,
+				5E795AD9E9FBFDC6201362B0 /* IBMPlexMono-Medium.ttf in Resources */,
+				654A23C7BFA9122F9998698F /* IBMPlexMono-Regular.ttf in Resources */,
+				FC92F067012B99C76BBE19A3 /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C2B1FF44B0A32073B943422 /* Sources */ = {
+		7A94F3631CCCDCF09AC28C8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F1B9D174958C8AB06143D2 /* ConnectView.swift in Sources */,
-				2E1D94079D312C6A6DD0819E /* Connection.swift in Sources */,
-				D26E1AE1226A2B22DF623170 /* CoreClient.swift in Sources */,
-				B51E91031B6F8DB834829C36 /* DemoClient.swift in Sources */,
-				A09689224FBA6AE9721CEDC9 /* EventStream.swift in Sources */,
-				22F8DBE205023868A8792627 /* HomeStore.swift in Sources */,
-				63439CD0E388205A78C96B27 /* HomeView.swift in Sources */,
-				28D0BEC2D61BB8327DCC2ACC /* Models.swift in Sources */,
-				56AF1D94A5FB936B787B5528 /* Panels.swift in Sources */,
-				819346682C347A374650D735 /* PlantKit.swift in Sources */,
-				BE961FA3E5926FFEAFF800FC /* PodView.swift in Sources */,
-				3D7F784E4D4CF202E06532BA /* ThryveAPI.swift in Sources */,
-				FD201F7801CE53357410CE15 /* ThryveApp.swift in Sources */,
-				6250C011980C4C40C17C0A5E /* SettingsView.swift in Sources */,
-				438FEEDC23E039921D7A6F43 /* Theme.swift in Sources */,
-				0C0D62B38A47FB4CCD7DD37E /* TowerLayout.swift in Sources */,
-				DB4F06D09600866BFD7A3583 /* TowerScene.swift in Sources */,
-				5B17C575D9A8A28F150E1C1F /* TowerView.swift in Sources */,
-				3837205658B15B3EB410F187 /* UnitDiscovery.swift in Sources */,
+				A89FCD885CA30000E0C24B83 /* AppDelegate.swift in Sources */,
+				D0E409E63CA2DB01C9F9DCBF /* ConnectView.swift in Sources */,
+				7A0A57B89B4773F2ED7EBBB9 /* Connection.swift in Sources */,
+				49F4A80277401E5F1379E65E /* CoreClient.swift in Sources */,
+				CE6E60242E893511731DCCF0 /* DemoClient.swift in Sources */,
+				C349A8B33C02F86AE7B11B76 /* EventStream.swift in Sources */,
+				84CC2B7603E56B3EE1F355A9 /* HomeStore.swift in Sources */,
+				C885BCE791A34DDD83BC040A /* HomeView.swift in Sources */,
+				1F31451895771FDB82CC0984 /* Models.swift in Sources */,
+				2D17BD2405B69B44C2409B5A /* NotificationModels.swift in Sources */,
+				185F09FA9A1E484BB93D8C73 /* NotificationSettings.swift in Sources */,
+				BFF88167D09A9A410AC1EA77 /* Panels.swift in Sources */,
+				7BA50ABDFD1ED36C8F3AB1AF /* PlantKit.swift in Sources */,
+				1B89C9B73160C3E1417C81D8 /* PodView.swift in Sources */,
+				E8021035DAFBC8F78963E497 /* PushRegistrar.swift in Sources */,
+				08E6771503704DA292C8909E /* SettingsView.swift in Sources */,
+				9A712E06E01D77747D932BCC /* StopPumpIntent.swift in Sources */,
+				FCB2E6B628A5FE75CBBB2A0A /* Theme.swift in Sources */,
+				00FE723EC708DBD2C8AC8601 /* ThryveAPI.swift in Sources */,
+				C62DA4AD92592C5D0E60D070 /* ThryveApp.swift in Sources */,
+				E0AA1BB5D067E38229B43A5F /* TowerLayout.swift in Sources */,
+				79342A83A262C435CB442127 /* TowerScene.swift in Sources */,
+				2CC3A481219BDF2F96D5D13C /* TowerView.swift in Sources */,
+				328B4516278D40AE050AC758 /* UnitDiscovery.swift in Sources */,
+				C2CBA5E9918AFCC26F1BEE64 /* UnitNotifier.swift in Sources */,
+				7A5DC09026070E85A58B449E /* WateringActivities.swift in Sources */,
+				840878011F714A601140CF57 /* WateringAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7444ADE70F925AFBF2F42FD9 /* Sources */ = {
+		812B1D1F905F1E0665D0A66E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C965F88BEA873B4D754BE9E /* AppLogicTests.swift in Sources */,
-				E93A96DEA1D1BC34709A0042 /* CoreClientTests.swift in Sources */,
-				44E981F19EB9648F25BCD569 /* TowerTests.swift in Sources */,
+				3AC77F2750F5F284477513A6 /* AppLogicTests.swift in Sources */,
+				5E59B2ACEA3397D8564942C2 /* CoreClientTests.swift in Sources */,
+				9FC805B15B6DDAC79BF40547 /* LiveActivityTests.swift in Sources */,
+				A15507AD71A3A4D51DC6898E /* NotificationTests.swift in Sources */,
+				A3978FCC86A81FC26DF99FD3 /* TowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4835EFC2059798E4C9DB396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329386994C512DBF731C9EDD /* StopPumpIntent.swift in Sources */,
+				BEFD78F1C5E24E2A99B34B0D /* ThryveWidgets.swift in Sources */,
+				EA5FF048D50AB79D18B5FD6A /* WateringAttributes.swift in Sources */,
+				691959F1B930E2A365A572D9 /* WateringLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F4439DC4BA045328DDF79AD /* PBXTargetDependency */ = {
+		EF51BCECA890BF60F43592D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6797D232164FB85E58E4ACA8 /* Thryve */;
-			targetProxy = DB3992988D2A45B8DBEB2199 /* PBXContainerItemProxy */;
+			target = 21352D84B2FBE7F83617824C /* Thryve */;
+			targetProxy = 376D1BA291AFAB95E6CB2D16 /* PBXContainerItemProxy */;
+		};
+		FE7526E19DD306CD6B964260 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB67FA329C3F23947D924CE /* ThryveWidgets */;
+			targetProxy = E4EA8A0CA2227DD011A8EBA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		20DE7783F12C56F397BC7227 /* Release */ = {
+		10AD5B05DE0EDBFA3EECC9DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Thryve/Thryve.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -371,87 +525,7 @@
 			};
 			name = Release;
 		};
-		6D91868FDCAA3FC49EB8F2A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Thryve;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 0.1.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
-			};
-			name = Release;
-		};
-		793F943D6FD130F4810B7015 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thryve.app.tests;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thryve.app/Thryve";
-			};
-			name = Debug;
-		};
-		7EC6AA81DF5CC98C6727DF4C /* Debug */ = {
+		1D586859727535CA908D5D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -522,7 +596,7 @@
 			};
 			name = Debug;
 		};
-		AF662D1395F155BE944F5740 /* Release */ = {
+		4431FBCA1CA69D074AF593F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,10 +612,75 @@
 			};
 			name = Release;
 		};
-		D267E594803D701FCDB27636 /* Debug */ = {
+		44983FF2D2B9A21F79BFD5AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Thryve;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		601496F995020747D6EA0C2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Thryve/Thryve.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -561,37 +700,106 @@
 			};
 			name = Debug;
 		};
+		A5E1A953270C92CC49B4DEA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ThryveWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Thryve;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thryve.app.widgets;
+				PRODUCT_NAME = ThryveWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) THRYVE_WIDGET";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDD81E95871DF7CE1A2C7AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thryve.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thryve.app/Thryve";
+			};
+			name = Debug;
+		};
+		E318490C0511882F4DF5D094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ThryveWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Thryve;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thryve.app.widgets;
+				PRODUCT_NAME = ThryveWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) THRYVE_WIDGET";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC5AC1535654A84CEBD5BCE1 /* Build configuration list for PBXNativeTarget "Thryve" */ = {
+		44BDFA5B4F4C7C0B145F3A75 /* Build configuration list for PBXProject "Thryve" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D267E594803D701FCDB27636 /* Debug */,
-				20DE7783F12C56F397BC7227 /* Release */,
+				1D586859727535CA908D5D10 /* Debug */,
+				44983FF2D2B9A21F79BFD5AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D6088C93190EC56D1102B4E1 /* Build configuration list for PBXNativeTarget "ThryveTests" */ = {
+		8B24CDCAFC72CA733154E8D1 /* Build configuration list for PBXNativeTarget "ThryveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				793F943D6FD130F4810B7015 /* Debug */,
-				AF662D1395F155BE944F5740 /* Release */,
+				DDD81E95871DF7CE1A2C7AF8 /* Debug */,
+				4431FBCA1CA69D074AF593F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DEC6D7B8F042EDBBC1836542 /* Build configuration list for PBXProject "Thryve" */ = {
+		D2A46979D33C9D37A150C324 /* Build configuration list for PBXNativeTarget "Thryve" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EC6AA81DF5CC98C6727DF4C /* Debug */,
-				6D91868FDCAA3FC49EB8F2A6 /* Release */,
+				601496F995020747D6EA0C2A /* Debug */,
+				10AD5B05DE0EDBFA3EECC9DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D826CFCDF0D6949137255956 /* Build configuration list for PBXNativeTarget "ThryveWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E318490C0511882F4DF5D094 /* Debug */,
+				A5E1A953270C92CC49B4DEA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3C69B90B4ACC0286396CF4C3 /* Project object */;
+	rootObject = 6607E0633407D0AB24C48186 /* Project object */;
 }
