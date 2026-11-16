@@ -115,6 +115,23 @@ actor DemoClient: ThryveAPI {
         }
     }
 
+    // The demo has no unit to push from: the feed stays quiet and tests come back as local.
+    func notificationFeed(after afterId: Int?) async throws -> NotificationFeed {
+        NotificationFeed(items: [], latestId: afterId ?? 0)
+    }
+
+    func registerDevice(_ registration: DeviceRegistration) async throws -> DeviceStatus {
+        DeviceStatus(apnsConfigured: false)
+    }
+
+    func unregisterDevice(id: String) async throws {}
+
+    func registerActivityToken(_ registration: ActivityTokenRegistration) async throws {}
+
+    func testNotification(deviceId: String) async throws -> TestResult {
+        TestResult(sent: false, via: "local")
+    }
+
     // MARK: - Helpers
 
     private func update(_ slot: Int, _ change: (Pod, String) -> Pod) throws -> Pod {

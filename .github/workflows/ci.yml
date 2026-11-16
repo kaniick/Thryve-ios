@@ -14,10 +14,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # The committed Thryve.xcodeproj must be what project.yml generates.
+  project:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Upload the generated project
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodeproj
+          path: Thryve.xcodeproj
+      - name: Project is up to date
+        run: git diff --exit-code -- Thryve.xcodeproj || { echo "::error::Thryve.xcodeproj is stale. Run xcodegen generate and commit it."; exit 1; }
+
   build:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+
+      # Build what project.yml describes, even if the committed project lags (the project job flags that).
+      - run: brew install xcodegen && xcodegen generate
 
       - name: Build
         run: >

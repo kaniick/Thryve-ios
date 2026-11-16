@@ -34,6 +34,12 @@
 		E93A96DEA1D1BC34709A0042 /* CoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D807A37FCF29E77E55EEE /* CoreClientTests.swift */; };
 		EE6B9E17E9F67708918B4B5C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E496FD5262A7A4157C4D03B2 /* OFL.txt */; };
 		FD201F7801CE53357410CE15 /* ThryveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16F90BF2608213B7DE07B7 /* ThryveApp.swift */; };
+		9BE932855E13B8F52701372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349D3E2CC67D20502F9AD4F /* AppDelegate.swift */; };
+		867A2DDEFE7C1886CF816ABB /* NotificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0708C37B1EC693B97A14740 /* NotificationModels.swift */; };
+		E963C4203179F61E01559B5F /* UnitNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FBA240D704601DFCA9628 /* UnitNotifier.swift */; };
+		2F39DA8334B88055F548B65C /* PushRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA661CA5A93F9B51FE9B6F7 /* PushRegistrar.swift */; };
+		ADCDDA44933F088518153FEA /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C307B3E5D960E0E8DDC073 /* NotificationSettings.swift */; };
+		58AE96856B46BFB42E003B81 /* NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C402AB65333BAADC012145 /* NotificationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +83,26 @@
 		D6D8475C2A61CD6FE39AD8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E496FD5262A7A4157C4D03B2 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		F562E2F69A2562F677161921 /* CoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClient.swift; sourceTree = "<group>"; };
+		8349D3E2CC67D20502F9AD4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0708C37B1EC693B97A14740 /* NotificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModels.swift; sourceTree = "<group>"; };
+		5E4FBA240D704601DFCA9628 /* UnitNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitNotifier.swift; sourceTree = "<group>"; };
+		CFA661CA5A93F9B51FE9B6F7 /* PushRegistrar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistrar.swift; sourceTree = "<group>"; };
+		95C307B3E5D960E0E8DDC073 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
+		77C402AB65333BAADC012145 /* NotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTests.swift; sourceTree = "<group>"; };
+		C08A14F5C8E5EFB9555AD8E3 /* Thryve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Thryve.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		5ACD98433E46017ABA262186 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E0708C37B1EC693B97A14740 /* NotificationModels.swift */,
+				5E4FBA240D704601DFCA9628 /* UnitNotifier.swift */,
+				CFA661CA5A93F9B51FE9B6F7 /* PushRegistrar.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		2ABAB3B2DE2E58348433DD66 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +119,11 @@
 			children = (
 				D6D8475C2A61CD6FE39AD8F1 /* Assets.xcassets */,
 				5DEC0542C88AEA226C4CBFA0 /* Info.plist */,
+				C08A14F5C8E5EFB9555AD8E3 /* Thryve.entitlements */,
 				6A107DBCBC7876259E11DE5D /* App */,
 				B8E4E3BA9C0965AE33C0D45A /* Models */,
 				5F6E8CA683B0BD79AE76007B /* Networking */,
+				5ACD98433E46017ABA262186 /* Notifications */,
 				3BA90AD2DBC86110AD3736DF /* Resources */,
 				2ABAB3B2DE2E58348433DD66 /* Services */,
 				3C077FD874126920BCF71504 /* Theme */,
@@ -111,6 +136,8 @@
 		3BA90AD2DBC86110AD3736DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95C307B3E5D960E0E8DDC073 /* NotificationSettings.swift */,
+				8349D3E2CC67D20502F9AD4F /* AppDelegate.swift */,
 				F3394B70B351CA9F92B596AC /* Fonts */,
 			);
 			path = Resources;
@@ -138,6 +165,7 @@
 		56494B067D0A92F39DF5B9A2 /* ThryveTests */ = {
 			isa = PBXGroup;
 			children = (
+				77C402AB65333BAADC012145 /* NotificationTests.swift */,
 				08703882D194C690E4E83609 /* AppLogicTests.swift */,
 				2E6D807A37FCF29E77E55EEE /* CoreClientTests.swift */,
 				9A67383EDEF2A8721E4143F7 /* TowerTests.swift */,
@@ -305,6 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCDDA44933F088518153FEA /* NotificationSettings.swift in Sources */,
+				2F39DA8334B88055F548B65C /* PushRegistrar.swift in Sources */,
+				E963C4203179F61E01559B5F /* UnitNotifier.swift in Sources */,
+				867A2DDEFE7C1886CF816ABB /* NotificationModels.swift in Sources */,
+				9BE932855E13B8F52701372C /* AppDelegate.swift in Sources */,
 				95F1B9D174958C8AB06143D2 /* ConnectView.swift in Sources */,
 				2E1D94079D312C6A6DD0819E /* Connection.swift in Sources */,
 				D26E1AE1226A2B22DF623170 /* CoreClient.swift in Sources */,
@@ -331,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58AE96856B46BFB42E003B81 /* NotificationTests.swift in Sources */,
 				7C965F88BEA873B4D754BE9E /* AppLogicTests.swift in Sources */,
 				E93A96DEA1D1BC34709A0042 /* CoreClientTests.swift in Sources */,
 				44E981F19EB9648F25BCD569 /* TowerTests.swift in Sources */,
@@ -355,6 +389,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = Thryve/Thryve.entitlements;
 				INFOPLIST_FILE = Thryve/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Thryve finds your Gardyn on your network and talks to it directly. Nothing goes through the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -545,6 +580,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = Thryve/Thryve.entitlements;
 				INFOPLIST_FILE = Thryve/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Thryve finds your Gardyn on your network and talks to it directly. Nothing goes through the internet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

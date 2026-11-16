@@ -1,0 +1,107 @@
+name: TestFlight
+
+# Archives the app on a macOS runner, signs it with Apple's cloud-managed
+# certificates through an App Store Connect API key (no Mac, no match, no
+# fastlane), and uploads it to TestFlight. Setup: docs/testflight.md.
+#
+# Secrets (Settings › Secrets and variables › Actions):
+#   ASC_KEY_ID      App Store Connect API key ID
+#   ASC_ISSUER_ID   its issuer ID
+#   ASC_KEY_P8      the AuthKey_XXXX.p8 file, base64-encoded
+#   APPLE_TEAM_ID   the 10-character Apple Developer team ID
+# Without them the job says so and passes.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testflight
+  cancel-in-progress: false
+
+jobs:
+  testflight:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+    steps:
+      - name: Check secrets
+        id: secrets
+        run: |
+          if [ -n "$ASC_KEY_ID" ] && [ -n "$ASC_ISSUER_ID" ] && [ -n "$ASC_KEY_P8" ] && [ -n "$APPLE_TEAM_ID" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=TestFlight skipped::Add ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 and APPLE_TEAM_ID repository secrets to upload builds (see docs/testflight.md)."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.secrets.outputs.ready == 'true'
+
+      - name: Versions
+        if: steps.secrets.outputs.ready == 'true'
+        id: version
+        run: |
+          # v1.2.3 tags set the version; manual runs keep project.yml's.
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            echo "marketing=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "marketing=$(awk -F'"' '/MARKETING_VERSION/ {print $2; exit}' project.yml)" >> "$GITHUB_OUTPUT"
+          fi
+          # Each upload needs a build number App Store Connect hasn't seen.
+          echo "build=$((GITHUB_RUN_NUMBER + 100))" >> "$GITHUB_OUTPUT"
+
+      - name: API key
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/asc"
+          printf '%s' "$ASC_KEY_P8" | base64 --decode > "$RUNNER_TEMP/asc/AuthKey_$ASC_KEY_ID.p8"
+          chmod 600 "$RUNNER_TEMP/asc/AuthKey_$ASC_KEY_ID.p8"
+          sed "s/TEAM_ID/$APPLE_TEAM_ID/" ci/ExportOptions.plist > "$RUNNER_TEMP/ExportOptions.plist"
+
+      - name: Generate project
+        if: steps.secrets.outputs.ready == 'true'
+        run: brew install xcodegen && xcodegen generate
+
+      - name: Archive
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          xcodebuild archive \
+            -project Thryve.xcodeproj -scheme Thryve -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/Thryve.xcarchive" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/asc/AuthKey_$ASC_KEY_ID.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CODE_SIGN_STYLE=Automatic \
+            MARKETING_VERSION="${{ steps.version.outputs.marketing }}" \
+            CURRENT_PROJECT_VERSION="${{ steps.version.outputs.build }}" \
+            -quiet
+
+      - name: Upload to TestFlight
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Thryve.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/asc/AuthKey_$ASC_KEY_ID.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+          echo "### Uploaded Thryve ${{ steps.version.outputs.marketing }} (${{ steps.version.outputs.build }}) to TestFlight" >> "$GITHUB_STEP_SUMMARY"
+          echo "Apple processes it for 5–30 minutes before it shows in TestFlight." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Remove the key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/asc"

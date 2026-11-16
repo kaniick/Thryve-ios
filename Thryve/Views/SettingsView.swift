@@ -45,6 +45,10 @@ struct SettingsView: View {
                     }
                 }
 
+                if !connection.isDemo {
+                    NotificationSettingsSection()
+                }
+
                 Section {
                     Button(connection.isDemo ? "Leave the demo" : "Connect to another unit", role: .destructive) {
                         dismiss()
