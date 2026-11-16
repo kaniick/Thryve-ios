@@ -21,10 +21,22 @@ account, no cloud and no telemetry.
 - **Light and water:** brightness and on/off (held for 30 minutes over the
   schedule, as on the web), and bounded pump runs.
 - **Alerts:** acknowledge reminders and latched hardware faults.
+- **Notifications:** the unit's notification rules on your phone, through Apple
+  Push straight from the unit (no relay) or background checks on your Wi-Fi.
+  Alerts can be acknowledged from the banner. See
+  [docs/notifications.md](docs/notifications.md).
+- **Watering Live Activity:** the pump's run on the lock screen and in the
+  Dynamic Island, with the time left, progress, water rising up the tower, power
+  and a Stop button.
 - **Finds your unit:** Bonjour (`_thryve._tcp`), or type its address. An
   optional API key is kept in the Keychain.
 - **Demo mode:** a simulated tower on day 19 of a grow, with no hardware
   needed.
+
+## Install with TestFlight (no Mac needed)
+
+GitHub Actions builds, signs and uploads the app to TestFlight with your Apple
+Developer account. Setup: [docs/testflight.md](docs/testflight.md).
 
 ## Build
 
@@ -36,7 +48,9 @@ xcodegen generate          # after adding or moving files; commit the regenerate
 open Thryve.xcodeproj
 ```
 
-Signing: the bundle ID is `com.thryve.app` and `DEVELOPMENT_TEAM` is blank. To run on a
+Signing: the bundle IDs are `com.thryve.app` and `com.thryve.app.widgets` (the Live
+Activity extension) and `DEVELOPMENT_TEAM` is blank. Push needs a paid team; with a free
+personal team, clear Code Signing Entitlements (see [docs/notifications.md](docs/notifications.md)). To run on a
 device, pick your own team under Signing & Capabilities (or set `DEVELOPMENT_TEAM` in
 `project.yml` and regenerate). If `com.thryve.app` is taken in your account, change
 `PRODUCT_BUNDLE_IDENTIFIER` in `project.yml` and regenerate.
@@ -56,6 +70,8 @@ To work against a unit without hardware, run core's simulator
 |---|---|
 | tRPC transport (`CoreClient`) | Ported from sleepypod/ios's `SleepypodCoreClient`, per [core ADR-0017](https://github.com/kaniick/Thryve/blob/dev/docs/adr/0017-ios-client.md), with `X-API-Key` added |
 | Live updates (`EventStream`) | core's `/api/ws` CoreEvent frames trigger a batched refresh |
+| Notifications (`Notifications/`) | core's "ios" channel: `notifications.feed` and APNs device tokens |
+| Live Activity (`LiveActivity/`, `ThryveWidgets/`) | ActivityKit + WidgetKit; core pushes `liveactivity` updates |
 | Discovery (`UnitDiscovery`) | `NWBrowser` for `_thryve._tcp`, TXT `id`/`v`/`auth` |
 | Palette (`Theme`) | core's `web/src/globals.css` `--lp-*` tokens |
 
