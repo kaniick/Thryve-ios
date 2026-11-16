@@ -33,7 +33,7 @@ jobs:
 
   # The committed Thryve.xcodeproj must be what project.yml generates.
   project:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
       - run: brew install xcodegen
@@ -47,10 +47,14 @@ jobs:
       - name: Project is up to date
         run: git diff --exit-code -- Thryve.xcodeproj || { echo "::error::Thryve.xcodeproj is stale. Run xcodegen generate and commit it."; exit 1; }
 
+  # Intel runners: GitHub's arm64 macOS pool has had capacity limits (jobs never picked up).
+  # macos-15-intel has Xcode 26.3 with the iOS 26.2 SDK and simulators.
   build:
-    runs-on: macos-26
+    runs-on: macos-15-intel
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - run: sudo xcode-select -s /Applications/Xcode_26.3.app && xcodebuild -version
 
       # Build what project.yml describes, even if the committed project lags (the project job flags that).
       - run: brew install xcodegen && xcodegen generate
@@ -80,7 +84,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES -quiet
 
   lint:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
       - run: brew install swiftlint
