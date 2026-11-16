@@ -64,7 +64,8 @@ final class CoreClient: ThryveAPI {
     }
 
     func stopPump() async throws -> ActuatorState {
-        try await mutate("pump.stop", Empty())
+        // pump.stop takes no input (z.void()); `{"json":{}}` would be refused.
+        try await mutateWithoutInput("pump.stop")
     }
 
     func markHarvested(slot: Int) async throws -> Pod {
@@ -178,6 +179,18 @@ final class CoreClient: ThryveAPI {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 15
         request.httpBody = try JSONEncoder().encode(SuperJSON(json: input))
+        let data = try await send(request, procedure: procedure)
+        return try decodeEnvelope(data)
+    }
+
+    /// POST /api/trpc/{procedure} with `{}`: superjson's encoding of no input, for `z.void()` procedures.
+    func mutateWithoutInput<T: Decodable>(_ procedure: String) async throws -> T {
+        guard let url = URL(string: "\(baseURL.absoluteString)/api/trpc/\(procedure)") else { throw APIError.invalidURL }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 15
+        request.httpBody = Data("{}".utf8)
         let data = try await send(request, procedure: procedure)
         return try decodeEnvelope(data)
     }

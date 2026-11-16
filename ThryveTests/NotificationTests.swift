@@ -147,3 +147,16 @@ private func item(_ id: Int, alert: Int? = nil) -> FeedItem {
         #expect(notifier.cursor == nil)
     }
 }
+
+@Suite struct PumpStopTests {
+    @Test func stopSendsNoInputBecauseCoreTakesNone() async throws {
+        let session = StubProtocol.session("stop") { _ in
+            (200, #"{"result":{"data":{"json":{"on":false,"level":0,"since":"2026-11-16T10:00:00.000Z","fault":null}}}}"#)
+        }
+        let state = try await CoreClient(baseURL: URL(string: "http://unit.local:3000")!, session: session).stopPump()
+        #expect(!state.on)
+        let req = try #require(StubProtocol.requests("stop").first)
+        #expect(req.url?.path == "/api/trpc/pump.stop")
+        #expect(req.httpBody.map { String(decoding: $0, as: UTF8.self) } == "{}")
+    }
+}
