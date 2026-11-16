@@ -44,10 +44,16 @@ enum WateringActivities {
         if let current {
             // The countdown runs on its own; only push a change the unit made (a new end, power or fault).
             guard Self.differs(current.content.state, state) else { return }
-            await current.update(ActivityContent(state: state, staleDate: stale(state)))
+            await update(id: current.id, ActivityContent(state: state, staleDate: stale(state)))
         } else {
             start(state)
         }
+    }
+
+    /// Looks the activity up again off the main actor so it isn't sent across isolation domains.
+    nonisolated private static func update(id: String, _ content: ActivityContent<WateringAttributes.ContentState>) async {
+        guard let activity = Activity<WateringAttributes>.activities.first(where: { $0.id == id }) else { return }
+        await activity.update(content)
     }
 
     nonisolated static func differs(_ a: WateringAttributes.ContentState, _ b: WateringAttributes.ContentState) -> Bool {
